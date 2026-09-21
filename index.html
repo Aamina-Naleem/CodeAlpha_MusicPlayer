@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velora Music Player</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="music-player">
+
+        <header class="top-bar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <i class="ri-music-2-fill"></i>
+                </div>
+
+                <div>
+                    <h1>VELORA</h1>
+                    <span>midnight music</span>
+                </div>
+
+            </div>
+
+            <button class="library-button">
+                <i class="ri-music-library-2-line"></i>
+                <span>Your Library</span>
+            </button>
+
+        </header>
+
+
+        <section class="player-layout">
+
+
+            <div class="now-playing">
+
+
+                <div class="album-wrapper">
+
+                    <div class="album-art">
+                        <img id="albumImage" src="images/Song1.jpg" alt="Album artwork">
+                    </div>
+
+                    <div class="vinyl-shadow"></div>
+
+                </div>
+
+
+                <div class="song-details">
+
+                    <p class="now-playing-label">NOW PLAYING</p>
+
+                    <h2 id="songTitle">Treat You Better</h2>
+
+                    <p id="artistName">Shawn Mendes</p>
+
+                </div>
+
+
+                <div class="progress-section">
+
+                    <div class="time-info">
+                        <span id="currentTime">00:00</span>
+                        <span id="duration">00:00</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        id="progressBar"
+                        min="0"
+                        max="100"
+                        value="0"
+                    >
+
+                </div>
+
+
+                <div class="controls">
+
+                    <button id="shuffleBtn" class="control-button">
+                        <i class="ri-shuffle-line"></i>
+                    </button>
+
+                    <button id="previousBtn" class="control-button">
+                        <i class="ri-skip-back-fill"></i>
+                    </button>
+
+                    <button id="playBtn" class="play-button">
+                        <i class="ri-play-fill"></i>
+                    </button>
+
+                    <button id="nextBtn" class="control-button">
+                        <i class="ri-skip-forward-fill"></i>
+                    </button>
+
+                    <button id="repeatBtn" class="control-button">
+                        <i class="ri-repeat-2-line"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="volume-section">
+
+                    <i class="ri-volume-down-line"></i>
+
+                    <input
+                        type="range"
+                        id="volumeBar"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.7"
+                    >
+
+                    <i class="ri-volume-up-line"></i>
+
+                </div>
+
+
+            </div>
+
+
+            <aside class="playlist">
+
+
+                <div class="playlist-header">
+
+                    <div>
+                        <p>YOUR COLLECTION</p>
+                        <h3>Playlist</h3>
+                    </div>
+
+                    <span id="songCount">04 songs</span>
+
+                </div>
+
+
+                <div class="playlist-items" id="playlistItems">
+
+
+                    <button class="playlist-item active" data-index="0">
+
+                        <img src="images/Song1.jpg" alt="Treat You Better">
+
+                        <div class="playlist-info">
+
+                            <strong>Treat You Better</strong>
+                            <span>Shawn Mendes</span>
+
+                        </div>
+
+                        <i class="ri-equalizer-line playing-icon"></i>
+
+                    </button>
+
+
+                    <button class="playlist-item" data-index="1">
+
+                        <img src="images/Song2.jpg" alt="Ore Piya">
+
+                        <div class="playlist-info">
+
+                            <strong>Ore Piya</strong>
+                            <span>Rahat Fateh Ali Khan</span>
+
+                        </div>
+
+                        <span class="track-number">02</span>
+
+                    </button>
+
+
+                    <button class="playlist-item" data-index="2">
+
+                        <img src="images/Song3.jpg" alt="I Like Me Better">
+
+                        <div class="playlist-info">
+
+                            <strong>I Like Me Better</strong>
+                            <span>Lauv</span>
+
+                        </div>
+
+                        <span class="track-number">03</span>
+
+                    </button>
+
+
+                    <button class="playlist-item" data-index="3">
+
+                        <img src="images/Song4.jpg" alt="Scars to Your Beautiful">
+
+                        <div class="playlist-info">
+
+                            <strong>Scars to Your Beautiful</strong>
+                            <span>Alessia Cara</span>
+
+                        </div>
+
+                        <span class="track-number">04</span>
+
+                    </button>
+
+
+                </div>
+
+
+                <div class="playlist-footer">
+
+                    <i class="ri-headphone-line"></i>
+                    <span>Let the night play.</span>
+
+                </div>
+
+
+            </aside>
+
+
+        </section>
+
+
+        <footer>
+
+            <span>VELORA MUSIC PLAYER</span>
+            <span>Made with HTML • CSS • JavaScript</span>
+
+        </footer>
+
+
+    </main>
+
+
+    <audio id="audioPlayer"></audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
